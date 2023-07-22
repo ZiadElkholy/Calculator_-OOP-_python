@@ -1,0 +1,58 @@
+class calculator:
+    def __init__(self ,num1,num2):
+        self.num1=num1
+        self.num2=num2
+    def add(self):
+        return self.num1 +self.num2
+    def sub(self):
+        return self.num1 -self.num2
+    def mult(self):
+        return self.num1 *self.num2
+    def div(self):
+        return self.num1 /self.num2
+class one_value:
+    def __init__(self,num):
+        self.num=num
+    def odd_even(self):
+        if self.num%2 ==0:
+            print("number is even")
+        else :
+            print("number is odd")
+    def factorial(self,num):
+        if num == 0:
+            return 1
+        else:
+            return num * self.factorial(num-1)
+    def fibonacci(self,num):
+        if num <= 1:
+            return num
+        else:
+            return self.fibonacci(num-1)+self.fibonacci(num-2)
+        
+print("Hello to calculator")       
+ch=input("Two values -->2 , One value-->1: ")
+if ch =="2":
+    num1=int(input("Enter first number: "))
+    num2=int(input("Enter second number: "))
+    x=calculator(num1,num2)
+
+    choice = int(input("For add-->1 , sub-->2 , mult-->3 , div-->4: " ))
+    if choice ==1 :
+        print("add: ",x.add())
+    elif choice ==2: 
+        print("sub: ",x.sub())
+    elif choice ==3 :
+        print("mult: ",x.mult())
+    elif choice ==4 :
+        print("div: ",x.div())
+    
+elif ch =="1":
+    num=int(input("Enter number: "))
+    y=one_value(num)    
+    choice = int(input("For odd/even-->1 , Factorial -->2 , fibonacci-->3 : " ))
+    if choice ==1 :
+        y.odd_even()
+    elif choice ==2 :
+        print(y.factorial(num))
+    elif choice ==3 :
+        print(y.fibonacci(num))
